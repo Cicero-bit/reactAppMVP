@@ -1,0 +1,3 @@
+navigate = useNavigate();
+
+navigate('/');

@@ -1,15 +1,20 @@
 import { useState } from 'react';
 import './App.css';
-import Login from './pages/Login/index';
 import GlobalStyles from './styles/GlobalStyles';
 import { Container } from './styles/GlobalStyles';
+import Routes from './routes';
+import Menu from './components/Header';
+import { BrowserRouter } from 'react-router';
 
 function App() {
   return (
-    <Container>
-      <Login />
+    <BrowserRouter>
+      <Menu />
+      <Container>
+        <Routes />
+      </Container>
       <GlobalStyles />
-    </Container>
+    </BrowserRouter>
   );
 }
 

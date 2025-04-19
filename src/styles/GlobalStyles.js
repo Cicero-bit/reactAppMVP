@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
+import { backgroundColor, primaryColor } from '../config/colors';
 
 export default createGlobalStyle`
   * {
@@ -14,7 +15,7 @@ export default createGlobalStyle`
     font-weight: 100;
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: #F9F9F9;
+    background-color: ${backgroundColor};
   }
 
   html, body, #root {
