@@ -1,20 +1,32 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterSlice from './modules/counter/counterSlice';
-import testSlice from './modules/testesAsync/asyncActionsSaga';
+import { persistStore } from 'redux-persist';
 import rootSaga from './modules/sagaRoot';
 import createSagaMiddleware from 'redux-saga';
+import reducersRoot from './modules/reducersRoot';
+import persistReducers from './modules/reduxPersistConfig';
+import {
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
-  reducer: {
-    counter: counterSlice,
-    testes: testSlice,
-  },
+  reducer: persistReducers(reducersRoot),
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
+    getDefaultMiddleware({
+      thunk: false,
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat(sagaMiddleware),
 });
 
 sagaMiddleware.run(rootSaga);
 
+export const persistor = persistStore(store);
 export default store;

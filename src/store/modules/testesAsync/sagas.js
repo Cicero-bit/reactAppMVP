@@ -4,7 +4,7 @@ import * as actions from './asyncActionsSaga';
 const requesition = () =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
-      reject();
+      resolve();
     }, 2000);
   });
 
