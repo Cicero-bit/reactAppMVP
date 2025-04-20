@@ -1,3 +1,6 @@
 navigate = useNavigate();
 
 navigate('/');
+
+
+o saga é um middleware para ocorrencias no app, ele trata pedidos antes do app conseguir rodar os reducers(actions de transforme states) FODA

@@ -1,24 +1,11 @@
 import React from 'react';
-import { Route, useNavigate, Outlet, useLocation } from 'react-router';
-import PropTypes from 'prop-types';
+import { Navigate, Outlet } from 'react-router';
 
-export default function AuthRoute({ component: Component, isClosed, ...rest }) {
+export default function AuthRoute() {
   const IsLoggedIn = false;
-  const navigate = useNavigate();
-  const location = useLocation();
 
-  if (isClosed && !IsLoggedIn) {
-    navigate('/', { state: { prevPath: location.pathname } });
+  if (!IsLoggedIn) {
+    return <Navigate to="/" />;
   }
-  return <Outlet {...rest} component={Component} />;
+  return <Outlet />;
 }
-
-AuthRoute.defaultProps = {
-  isClosed: false,
-};
-
-AuthRoute.propTypes = {
-  component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
-    .isRequired,
-  isClosed: PropTypes.bool,
-};

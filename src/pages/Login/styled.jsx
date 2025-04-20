@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const Title = styled.h1`
-  background-color: ${(props) => (props.isRed ? 'red' : 'blue')};
+  background-color: ${(props) => (props.isred ? 'red' : 'blue')};
 `;

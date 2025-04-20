@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
-import { backgroundColor, primaryColor } from '../config/colors';
+import * as colors from '../config/colors';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   * {
@@ -15,7 +16,7 @@ export default createGlobalStyle`
     font-weight: 100;
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: ${backgroundColor};
+    background-color: ${colors.backgroundColor};
   }
 
   html, body, #root {
@@ -32,6 +33,10 @@ export default createGlobalStyle`
 
   ul {
     list-style: none;
+  }
+
+  body .Toastify .Tostify__toast-container .Toastify__toast--sucess {
+    color: yellow;
   }
 `;
 

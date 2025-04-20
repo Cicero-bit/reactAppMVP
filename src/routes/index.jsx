@@ -10,10 +10,9 @@ export default function main() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route
-        path="/securitys"
-        element={<AuthRoute component={Securitys} true />}
-      />
+      <Route element={<AuthRoute />}>
+        <Route path="/securitys" element={<Securitys />} />
+      </Route>
       <Route path="*" element={<Page404 />} />
     </Routes>
   );
