@@ -5,19 +5,19 @@ this is one of my projects that is kinda of a market place for security personal
 
 ## Whats being used for dev
 
-React
-React Toastify
-React Router for routing
-Redux for state manager
-Redux-Persist for offline & persisting states
-Redux-Saga to handle async and middleware actions
-Vite -> (fast), but switching to nextJS in the future
-Axios to consume
-RESTAPI as backend : https://github.com/Cicero-bit/apirestull
-Styled Components + TailWind(Future)
+React <br/>
+React Toastify <br/>
+React Router for routing <br/>
+Redux for state manager <br/>
+Redux-Saga to handle async and middleware actions <br/>
+Redux-Persist for offline & persisting states <br/>
+Vite -> (fast), but switching to nextJS in the future <br/>
+Axios to consume <br/>
+RESTAPI as backend : https://github.com/Cicero-bit/apirestull <br/>
+Styled Components + TailWind <br/>
 
 
 ## VsCode sugar :)
 
-Eslint + Prittier
+Eslint + Prittier <br/>
 editorconfig

@@ -4,13 +4,6 @@ import * as colors from '../config/colors';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
-  * {
-    margin: 0px;
-    padding: 0px;
-    outline: none;
-    box-sizing: border-box;
-  }
-
   body{
     font-family: "Montserrat", sans-serif;
     font-weight: 100;
@@ -19,32 +12,19 @@ export default createGlobalStyle`
     background-color: ${colors.backgroundColor};
   }
 
-  html, body, #root {
-    height: 100%;
-  }
-
   button {
     cursor: pointer;
-  }
-
-  a {
-    text-decoration: none;
   }
 
   ul {
     list-style: none;
   }
-
-  body .Toastify .Tostify__toast-container .Toastify__toast--sucess {
-    color: yellow;
-  }
 `;
 
 export const Container = styled.section`
-  max-width: 360px;
+  max-width: 900px;
   background-color: #fff;
   margin: 30px auto;
-  padding: 30px;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 `;
