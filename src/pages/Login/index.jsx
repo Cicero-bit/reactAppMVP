@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router';
+import * as colors from '../../config/colors';
 
 export default function Login() {
   return (

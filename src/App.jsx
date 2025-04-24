@@ -8,9 +8,7 @@ import Menu from './components/Header';
 function App() {
   return (
     <BrowserRouter>
-      <Container>
-        <Routes />
-      </Container>
+      <Routes />
       <GlobalStyles />
       <ToastContainer autoClose={3000} className="toast-container" />
     </BrowserRouter>

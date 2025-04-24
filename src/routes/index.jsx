@@ -12,9 +12,9 @@ import Index from '../pages/Index';
 export default function main() {
   return (
     <Routes>
+      <Route index element={<Index />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/" element={<Index />} />
       <Route element={<AuthRoute />}>
         <Route path="/profile" element={<Profile />} />
         <Route path="/securitys" element={<Securitys />} />

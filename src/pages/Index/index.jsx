@@ -9,8 +9,12 @@ export default function Index() {
 
   useEffect(() => {
     async function getData() {
-      const response = await axios.get('/security');
-      setSecuritys(response.data);
+      try {
+        const response = await axios.get('/security');
+        setSecuritys(response.data);
+      } catch (e) {
+        console.log(e);
+      }
     }
     getData();
   }, []);
