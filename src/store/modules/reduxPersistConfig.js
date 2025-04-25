@@ -6,7 +6,7 @@ export default (reducers) => {
     {
       key: 'SecurityChannel',
       storage,
-      whitelist: ['testes'],
+      whitelist: ['auth'],
     },
     reducers
   );

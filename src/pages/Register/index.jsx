@@ -1,6 +1,6 @@
 import React from 'react';
 import Register from '../../components/RegisterSection';
-import Image from '../../assets/security-guard-CP16NW.jpg';
+import Image from '../../assets/registerPageGroup.png';
 
 export default function RegisterPage() {
   return (
@@ -11,9 +11,9 @@ export default function RegisterPage() {
 
       <div className="w-1/2">
         <img
-          src={''}
+          src={Image}
           alt="super security guy"
-          className="w-full h-full object-cover"
+          className="w-screen h-screen object-cover"
         />
       </div>
     </div>

@@ -1,10 +1,8 @@
-import testesAsync from './testesAsync/asyncActionsSaga';
-import counter from './counter/counterSlice';
 import { combineReducers } from 'redux';
+import authSlice from './auth/authSlice';
 
 const reducers = combineReducers({
-  counter: counter,
-  testes: testesAsync,
+  auth: authSlice,
 });
 
 export default reducers;

@@ -42,11 +42,12 @@ export default function Register() {
           },
         }).then((response) => {
           toast.success('Conta registrada com sucesso!');
-          navigate(-1);
-          console.log(response.data);
+          navigate('/login');
         });
       } catch (e) {
-        toast.error(`Algo deu errado ${e.response.data.erros}`);
+        e.response.data.erros.map((err) => {
+          toast.error(err);
+        });
         console.log(e.response.data.erros);
       }
     } else {

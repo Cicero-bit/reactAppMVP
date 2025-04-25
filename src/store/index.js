@@ -21,6 +21,7 @@ const store = configureStore({
     getDefaultMiddleware({
       thunk: false,
       serializableCheck: {
+        ignoredActionPaths: ['payload.navigate'],
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat(sagaMiddleware),
