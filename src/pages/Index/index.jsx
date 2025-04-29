@@ -1,46 +1,78 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import axios from '../../services/axios';
-import Card from './styled';
-import defaultAvatar from '../../assets/iconfallback.png';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import { Link } from 'react-router';
+import banner from '../../assets/banner2.png';
 
 export default function Index() {
-  const [securitys, setSecuritys] = useState([]);
-
-  useEffect(() => {
-    async function getData() {
-      try {
-        const response = await axios.get('/security');
-        setSecuritys(response.data);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-    getData();
-  }, []);
-
   return (
     <>
-      <Header></Header>
-      <div className="flex justify-center">
-        <div className="w-full max-w-6xl flex flex-wrap justify-center gap-4">
-          {securitys.map((security) => (
-            <Card
-              key={security.id}
-              name={String(security.name)}
-              specialty={'Segurança'}
-              image={
-                security?.ProfilePics?.length > 0 &&
-                security.ProfilePics[0]?.url
-                  ? security.ProfilePics[0].url
-                  : defaultAvatar
-              }
-              location="Vitória, ES"
-            />
-          ))}
-        </div>
-      </div>
+      <Header />
+      <main className="flex flex-col">
+        <section
+          className="relative w-full h-screen flex items-center justify-center bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${banner})`,
+            backgroundColor: 'red',
+          }}
+        >
+          <div className="absolute inset-0 bg-opacity-50 z-0" />{' '}
+          <div className="relative z-10 text-center text-white p-4">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Bem-vindo à{' '}
+              <span className="text-blue-400">Security Channel</span>
+            </h1>
+            <p className="text-lg md:text-2xl max-w-xl mx-auto">
+              Conectando profissionais de segurança com as melhores
+              oportunidades de trabalho.
+            </p>
+            <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center">
+              <Link
+                to="/register"
+                className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition duration-300"
+              >
+                Quero Trabalhar
+              </Link>
+              <Link
+                to="/empresas"
+                className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition duration-300"
+              >
+                Contratar Segurança
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-7xl mx-auto py-24 px-6 grid md:grid-cols-2 gap-12">
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+              Vantagens para Empresas
+            </h2>
+            <ul className="list-disc list-inside space-y-4 text-gray-600">
+              <li>Cadastro rápido e intuitivo</li>
+              <li>Acesso a uma rede verificada de profissionais</li>
+              <li>Filtros avançados para encontrar o candidato ideal</li>
+              <li>Suporte especializado para grandes eventos</li>
+              <li>Organização empresarial completa</li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+              Vantagens para Profissionais
+            </h2>
+            <ul className="list-disc list-inside space-y-4 text-gray-600">
+              <li>Facilidade de cadastro e busca de vagas</li>
+              <li>Visibilidade para empresas de renome</li>
+              <li>Atualizações em tempo real de oportunidades</li>
+              <li>Controle total do seu perfil profissional</li>
+              <li>Ofertas de trabalho automatizadas</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+      <Footer />
     </>
   );
 }

@@ -8,6 +8,7 @@ import Securitys from '../pages/Securitys';
 import Register from '../pages/Register';
 import Profile from '../pages/Profile';
 import Index from '../pages/Index';
+import Test from '../pages/Enterprises/Index';
 
 export default function main() {
   return (
@@ -15,6 +16,7 @@ export default function main() {
       <Route index element={<Index />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/securitys" element={<Test />} />
       <Route element={<AuthRoute />}>
         <Route path="/profile" element={<Profile />} />
         <Route path="/securitys" element={<Securitys />} />

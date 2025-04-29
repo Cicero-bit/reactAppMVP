@@ -4,7 +4,7 @@ import isEmail from 'validator/lib/isEmail';
 import { Link, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import * as actions from '../../store/modules/auth/authSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Login() {
   const dispath = useDispatch();
@@ -12,6 +12,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   let formErr = false;
   const navigate = useNavigate();
+  const isLoading = useSelector((state) => state.auth.isLoading);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -35,7 +36,6 @@ export default function Login() {
           Bem vindo de volta!
         </h2>
         <p className="mb-4 text-gray-500">Realize seu login abaixo</p>
-
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label className="block text-sm font-medium text-gray-700">
@@ -66,12 +66,16 @@ export default function Login() {
               }}
             />
           </div>
-
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300 flex items-center justify-center"
+            disabled={isLoading}
           >
-            Entrar
+            {isLoading ? (
+              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : (
+              'Entrar'
+            )}
           </button>
         </form>
 

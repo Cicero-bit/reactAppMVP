@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import axios from '../../../services/axios';
 
 const initialState = {
   isLoggedIn: false,
@@ -24,6 +25,7 @@ const authSlice = createSlice({
       console.log(state, 'End of login SAGA');
     },
     LOGIN_FAILURE: (state = initialState, action) => {
+      delete axios.defaults.headers.Authorization;
       return initialState;
     },
   },

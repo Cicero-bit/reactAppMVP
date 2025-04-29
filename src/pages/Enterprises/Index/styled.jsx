@@ -37,7 +37,6 @@ const Name = styled.h2`
 `;
 
 const Specialty = styled.span`
-  background-color: #5c6ac4;
   color: white;
   padding: 0.3rem 0.8rem;
   border-radius: 9999px;
@@ -77,7 +76,7 @@ export default function SecurityCard({
       <Name>
         {String(name).charAt(0).toUpperCase() + String(name).slice(1)}
       </Name>
-      <Specialty>{specialty}</Specialty>
+      <Specialty className="dark:bg-gray-900 ">{specialty}</Specialty>
       <Location>
         <FaMapMarkerAlt size={16} />
         {location}
