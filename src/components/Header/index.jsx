@@ -16,7 +16,6 @@ export default function Menu() {
           </Link>{' '}
         </div>
 
-        {/* Navegação */}
         <nav className="flex items-center space-x-8">
           <Link
             to="/register"
@@ -25,17 +24,12 @@ export default function Menu() {
             Trabalhar
           </Link>
           <Link
-            to="/empresas"
+            to="/securitys"
             className="text-gray-600 hover:text-blue-600 transition"
           >
             Empresas
           </Link>
-          <Link
-            to="/securitys"
-            className="text-gray-600 hover:text-blue-600 transition"
-          >
-            Home
-          </Link>
+
           <Link
             to="/sobre"
             className="text-gray-600 hover:text-blue-600 transition"
