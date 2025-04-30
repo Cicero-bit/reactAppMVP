@@ -14,7 +14,7 @@ export default function Index() {
           className="relative w-full h-screen flex items-center justify-center bg-cover bg-center"
           style={{
             backgroundImage: `url(${banner})`,
-            backgroundColor: 'red',
+            backgroundColor: 'white',
           }}
         >
           <div className="absolute inset-0 bg-opacity-50 z-0" />{' '}
@@ -38,7 +38,7 @@ export default function Index() {
                 to="/empresas"
                 className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition duration-300"
               >
-                Contratar Segurança
+                Contratar Seguranças
               </Link>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function Index() {
               <li>Cadastro rápido e intuitivo</li>
               <li>Acesso a uma rede verificada de profissionais</li>
               <li>Filtros avançados para encontrar o candidato ideal</li>
-              <li>Suporte especializado para grandes eventos</li>
+              <li>Suporte especializado para pequenos e grandes eventos</li>
               <li>Organização empresarial completa</li>
             </ul>
           </div>

@@ -10,6 +10,7 @@ import Profile from '../pages/Profile';
 import Index from '../pages/Index';
 import Test from '../pages/Enterprises/Index';
 import About from '../pages/About/index';
+import Contact from '../pages/Contact/index';
 
 export default function main() {
   return (
@@ -19,7 +20,7 @@ export default function main() {
       <Route path="/register" element={<Register />} />
       <Route path="/securitys" element={<Test />} />
       <Route path="/sobre" element={<About />} />
-      <Route path="/contato" element={<Test />} />
+      <Route path="/contato" element={<Contact />} />
       <Route element={<AuthRoute />}>
         <Route path="/profile" element={<Profile />} />
         <Route path="/securitys" element={<Securitys />} />
