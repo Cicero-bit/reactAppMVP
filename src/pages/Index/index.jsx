@@ -21,7 +21,7 @@ export default function Index() {
           <div className="relative z-10 text-center text-white p-4">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               Bem-vindo à{' '}
-              <span className="text-blue-400">Security Channel</span>
+              <span className="text-blue-400">Security Channels</span>
             </h1>
             <p className="text-lg md:text-2xl max-w-xl mx-auto">
               Conectando profissionais de segurança com as melhores

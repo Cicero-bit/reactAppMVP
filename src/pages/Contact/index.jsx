@@ -1,8 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../../store/modules/emailsSenders/emailSlice';
+import isEmail from 'validator/lib/isEmail';
+import { toast } from 'react-toastify';
 
 export default function Contatc() {
+  const dispath = useDispatch();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const isLoading = useSelector((state) => state.mail.isLoading);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!isEmail(email)) {
+      return toast.error('Por favor informe um email valido');
+    }
+    if (name.length <= 3 || message <= 1) {
+      return toast.error('O campo nome/message parece invalido');
+    }
+    dispath(
+      actions.SEND_MAIL_REQUEST({
+        name,
+        email: 'cicerosduelis@gmail.com',
+        message: message + ' ' + email,
+      })
+    );
+  }
+
   return (
     <>
       <Header />
@@ -59,29 +86,46 @@ export default function Contatc() {
             Nos descreva a(o) sua(seu) dúvida/pedido que iremos te responder em
             até 24 horas!
           </h3>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
+                value={name}
                 type="text"
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
                 placeholder="Seu nome"
                 className="border p-3 rounded-md w-full"
               />
               <input
+                value={email}
                 type="email"
-                placeholder="E-mail"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                placeholder="Seu e-mail"
                 className="border p-3 rounded-md w-full"
               />
             </div>
             <textarea
+              value={message}
               placeholder="Detalhes do contato"
               rows="4"
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
               className="border p-3 rounded-md w-full"
             ></textarea>
             <button
               type="submit"
+              disabled={isLoading}
               className="w-full bg-blue-700 text-white py-3 rounded-md hover:bg-blue-800 transition"
             >
-              Enviar
+              {isLoading ? (
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              ) : (
+                'Enviar'
+              )}
             </button>
           </form>
         </div>

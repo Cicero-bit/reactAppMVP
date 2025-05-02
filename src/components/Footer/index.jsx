@@ -13,7 +13,7 @@ export default function Footer() {
             <Link to="/" className="flex items-center">
               <img src={logo} className="h-8 me-3" alt="SecurityChannel Logo" />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Security Channel
+                Security Channels
               </span>
             </Link>
           </div>

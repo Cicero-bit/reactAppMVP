@@ -12,7 +12,7 @@ export default function Menu() {
             className="font-bold text-xl text-gray-800 flex gap-2 items-center"
           >
             <img src={logo} alt="Logo" className="h-10 w-auto" />
-            Security Channel
+            Security Channels
           </Link>{' '}
         </div>
 

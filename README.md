@@ -1,4 +1,4 @@
-# App using react + vite Progress: 20%
+# App using react + vite Progress: 30%
 
 this is one of my projects that is kinda of a market place for security personal post about their jobs, more in the future
 
