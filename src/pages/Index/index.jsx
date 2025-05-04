@@ -4,12 +4,13 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { Link } from 'react-router';
 import banner from '../../assets/banner2.png';
+import Typewriter from '../../components/Typewriter';
 
 export default function Index() {
   return (
     <>
       <Header />
-      <main className="flex flex-col">
+      <main className="flex flex-col ">
         <section
           className="relative w-full h-screen flex items-center justify-center bg-cover bg-center"
           style={{
@@ -19,24 +20,29 @@ export default function Index() {
         >
           <div className="absolute inset-0 bg-opacity-50 z-0" />{' '}
           <div className="relative z-10 text-center text-white p-4">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Bem-vindo à{' '}
-              <span className="text-blue-400">Security Channels</span>
-            </h1>
-            <p className="text-lg md:text-2xl max-w-xl mx-auto">
-              Conectando profissionais de segurança com as melhores
-              oportunidades de trabalho.
+            <p className="md:text-2xl max-w-x1 space-x-4 mx-auto flex">
+              <span className="text-4xl md:text-6xl font-bold mb-4">
+                Bem-vindo à{' '}
+              </span>
+              <span className="text-blue-400 text-6xl">Security Channels</span>
             </p>
+            <div className="text-lg flex items-center justify-self-center space-x-1">
+              <span className="text-xl font-semibold">Conectando</span>
+              <Typewriter />
+              <span className="text-xl font-semibold">
+                com a área de segurança de modo fácil.
+              </span>
+            </div>
             <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center">
               <Link
                 to="/register"
-                className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition duration-300"
+                className="px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg transition duration-300"
               >
                 Quero Trabalhar
               </Link>
               <Link
                 to="/empresas"
-                className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition duration-300"
+                className="px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white font-semibold rounded-lg transition duration-300"
               >
                 Contratar Seguranças
               </Link>
@@ -54,7 +60,7 @@ export default function Index() {
               <li>Acesso a uma rede verificada de profissionais</li>
               <li>Filtros avançados para encontrar o candidato ideal</li>
               <li>Suporte especializado para pequenos e grandes eventos</li>
-              <li>Organização empresarial completa</li>
+              <li>Sistema de controle empresarial completo</li>
             </ul>
           </div>
 

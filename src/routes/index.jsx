@@ -8,7 +8,7 @@ import Securitys from '../pages/Securitys';
 import Register from '../pages/Register';
 import Profile from '../pages/Profile';
 import Index from '../pages/Index';
-import Test from '../pages/Enterprises/Index';
+import EnterpriseRegister from '../pages/Enterprises/Register';
 import About from '../pages/About/index';
 import Contact from '../pages/Contact/index';
 
@@ -18,7 +18,7 @@ export default function main() {
       <Route index element={<Index />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/securitys" element={<Test />} />
+      <Route path="/empresas" element={<EnterpriseRegister />} />
       <Route path="/sobre" element={<About />} />
       <Route path="/contato" element={<Contact />} />
       <Route element={<AuthRoute />}>

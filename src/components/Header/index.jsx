@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
 import logo from '../../assets/securitychannel.svg';
+import { useSelector } from 'react-redux';
 
 export default function Menu() {
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -24,7 +27,7 @@ export default function Menu() {
             Trabalhar
           </Link>
           <Link
-            to="/securitys"
+            to="/empresas"
             className="text-gray-600 hover:text-blue-600 transition"
           >
             Empresas
@@ -43,10 +46,10 @@ export default function Menu() {
             Contato
           </Link>
           <Link
-            to="/login"
+            to={isLoggedIn ? '/painel' : '/login'}
             className="text-gray-600 hover:text-blue-600 transition"
           >
-            Login
+            {isLoggedIn ? 'Painel' : 'Entrar'}
           </Link>
         </nav>
       </div>
