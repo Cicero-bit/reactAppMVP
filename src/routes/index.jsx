@@ -4,18 +4,22 @@ import { BrowserRouter, Routes, Route } from 'react-router';
 import AuthRoute from './util/AuthRequired';
 import Login from '../pages/Login';
 import Page404 from '../pages/Page404';
-import Securitys from '../pages/Securitys';
 import Register from '../pages/Register';
 import Profile from '../pages/Profile';
 import Index from '../pages/Index';
 import EnterpriseRegister from '../pages/Enterprises/Register';
 import About from '../pages/About/index';
 import Contact from '../pages/Contact/index';
+import DashboardLayout from '../pages/Enterprises/DashBoard';
+import Securitys from '../pages/Enterprises/Securitys';
 
 export default function main() {
   return (
     <Routes>
       <Route index element={<Index />} />
+      <Route path="dashboard" element={<DashboardLayout />}>
+        <Route path="contatos" element={<Securitys />} />
+      </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/empresas" element={<EnterpriseRegister />} />

@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import * as actions from '../../../store/modules/allsecurity/indexslice';
 import Card from './styled';
 import defaultAvatar from '../../../assets/iconfallback.png';
-import Header from '../../../components/Header';
 import { useDispatch, useSelector } from 'react-redux';
 import SkeletonCard from '../../../components/Skeletons/index/index';
-import Footer from '../../../components/Footer';
 
 export default function Index() {
   const isLoading = useSelector((state) => {
@@ -21,11 +19,10 @@ export default function Index() {
   const securitys = useSelector((state) => state.securitys.securitys);
   return (
     <>
-      <Header></Header>
       <div className="flex justify-center m-8">
-        <div className="w-full max-w-6xl flex flex-wrap justify-center gap-4">
+        <div className="w-full flex flex-wrap justify-center gap-4">
           {isLoading
-            ? Array.from({ length: 6 }).map((_, index) => (
+            ? Array.from({ length: 12 }).map((_, index) => (
                 <SkeletonCard key={index} />
               ))
             : securitys.map((security) => (
@@ -44,7 +41,6 @@ export default function Index() {
               ))}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

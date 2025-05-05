@@ -43,7 +43,7 @@ export default function About() {
               </p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-blue-800">9/10</p>
+              <p className="text-3xl font-bold text-blue-800">10/10</p>
               <p className="text-gray-600">Índice de satisfação de empresas</p>
             </div>
           </div>
@@ -59,7 +59,8 @@ export default function About() {
           <p className="max-w-2xl mx-auto text-gray-600 mb-12">
             Oferecemos soluções que se adaptam tanto às empresas quanto aos
             profissionais. Nossa plataforma simplifica a conexão e contratação
-            de seguranças qualificados para diversos tipos de eventos.
+            de seguranças qualificados para diversos tipos de eventos em apenas
+            um clique.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">

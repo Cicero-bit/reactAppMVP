@@ -6,6 +6,13 @@
   --color-primary: #0197F6;
 }
 
+
+@layer utilities {
+  .shadow-inset-right {
+    box-shadow: inset -4px 0 6px -3px rgba(0, 0, 0, 0.1);
+  }
+}
+
 /*
 export const primaryColor = '#1E2A38';
 export const secundaryColor = '#3B4C63';
