@@ -12,6 +12,7 @@ import About from '../pages/About/index';
 import Contact from '../pages/Contact/index';
 import DashboardLayout from '../pages/Enterprises/DashBoard';
 import Securitys from '../pages/Enterprises/Securitys';
+import SearchCompany from '../pages/SearchCompany';
 
 export default function main() {
   return (
@@ -26,8 +27,10 @@ export default function main() {
       <Route path="/sobre" element={<About />} />
       <Route path="/contato" element={<Contact />} />
       <Route element={<AuthRoute />}>
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/securitys" element={<Securitys />} />
+        <Route path="profile" element={<Profile />} >
+          <Route index element={<SearchCompany />} />
+        </Route>
+
       </Route>
       <Route path="*" element={<Page404 />} />
     </Routes>
