@@ -11,7 +11,14 @@ import {
   Moon,
   LogOut,
 } from 'lucide-react';
-import { Link, Outlet } from 'react-router';
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useMatch,
+  useResolvedPath,
+} from 'react-router';
+import logo from '../../../assets/securitychannel.svg';
 
 export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -22,14 +29,12 @@ export default function DashboardLayout() {
       <aside
         className={`transition-all duration-300 ${
           sidebarOpen ? 'w-64' : 'w-16'
-        } bg-white shadow-inset-right flex flex-col justify-between`}
+        } bg-white shadow-inset-right flex flex-col justify-between `}
       >
         <div>
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-4">
-            <span className="text-lg font-bold">
-              {sidebarOpen ? 'Channels' : 'SC'}
-            </span>
+            <img src={logo} className="w-10 h-10" />
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
               className="md:hidden"
@@ -57,16 +62,19 @@ export default function DashboardLayout() {
                 icon={<Users />}
                 label="Equipe"
                 sidebarOpen={sidebarOpen}
+                to={'equipe'}
               />
               <MenuItem
                 icon={<MessageSquare />}
-                label="Conversas"
+                label="Channels"
                 sidebarOpen={sidebarOpen}
+                to={'channels'}
               />
               <MenuItem
                 icon={<Bell />}
                 label="Solicitações"
                 sidebarOpen={sidebarOpen}
+                to={'solicitacoes'}
               />
             </Section>
 
@@ -75,6 +83,7 @@ export default function DashboardLayout() {
                 icon={<HandCoins />}
                 label="Pagamentos"
                 sidebarOpen={sidebarOpen}
+                to={'pagamentos'}
               />
             </Section>
           </div>
@@ -87,6 +96,7 @@ export default function DashboardLayout() {
               icon={<Settings />}
               label="Configurações"
               sidebarOpen={sidebarOpen}
+              to={'configuracoes'}
             />
             <div className="flex items-center mt-2 justify-between">
               <div className="flex justify-center">
@@ -107,7 +117,7 @@ export default function DashboardLayout() {
               {sidebarOpen && (
                 <div>
                   <p className="text-sm font-medium">Cicero</p>
-                  <p className="text-xs text-gray-500">Admin Manager</p>
+                  <p className="text-xs text-gray-500">Adiministrador</p>
                 </div>
               )}
             </div>
@@ -120,7 +130,7 @@ export default function DashboardLayout() {
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 p-6 bg-gray-100">
+      <main className="flex-1 p-6 bg-gray-100 h-screen overflow-y-auto">
         <Outlet />
       </main>
     </div>
@@ -140,10 +150,19 @@ function Section({ title, children, open }) {
   );
 }
 
-function MenuItem({ icon, label, sidebarOpen, to }) {
+function MenuItem({ icon, label, sidebarOpen, to = '' }) {
+  const resolved = useResolvedPath(to);
+  const match = useMatch({ path: resolved.pathname, end: to === '' });
+
+  const isActive = match;
+
   return (
     <Link to={to}>
-      <div className="flex items-center space-x-3 hover:bg-gray-100 p-2 rounded cursor-pointer">
+      <div
+        className={`${
+          isActive ? 'bg-gray-200 text-blue-700 font-medium' : 'bg-white'
+        } flex items-center space-x-3 hover:bg-gray-100 p-2 rounded cursor-pointer`}
+      >
         {icon}
         {sidebarOpen && <span className="text-sm font-medium">{label}</span>}
       </div>

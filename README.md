@@ -15,6 +15,7 @@ Vite -> (fast), but switching to nextJS in the future <br/>
 Axios to consume <br/>
 RESTAPI as backend : https://github.com/Cicero-bit/apirestull <br/>
 Styled Components + TailWind <br/>
+Lucide React for icons
 
 
 ## VsCode sugar :)

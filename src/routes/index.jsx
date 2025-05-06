@@ -12,12 +12,14 @@ import About from '../pages/About/index';
 import Contact from '../pages/Contact/index';
 import DashboardLayout from '../pages/Enterprises/DashBoard';
 import Securitys from '../pages/Enterprises/Securitys';
+import Resume from '../pages/Enterprises/Resume';
 
 export default function main() {
   return (
     <Routes>
       <Route index element={<Index />} />
       <Route path="dashboard" element={<DashboardLayout />}>
+        <Route path="" element={<Resume />} />
         <Route path="contatos" element={<Securitys />} />
       </Route>
       <Route path="/login" element={<Login />} />

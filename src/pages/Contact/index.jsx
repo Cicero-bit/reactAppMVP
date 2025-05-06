@@ -84,7 +84,7 @@ export default function Contatc() {
         <div className="absolute right-100 -translate-y-1/2 max-w-md bg-white text-black rounded-lg shadow-xl p-6 z-10 opacity-95">
           <h3 className="text-xl font-semibold mb-4">
             Nos descreva a(o) sua(seu) dúvida/pedido que iremos te responder em
-            até 24 horas!
+            até 48 horas!
           </h3>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
