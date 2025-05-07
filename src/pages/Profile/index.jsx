@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Outlet } from "react-router";
 import axios from '../../services/axios';
+import logo from "../../assets/securitychannel.svg"
+
+import { Bell, RadioTower, Folder, CircleUserRound } from 'lucide-react';
 
 export default function Profile() {
   const [security, setSecurity] = useState(0);
@@ -17,62 +21,38 @@ export default function Profile() {
     getProfile();
   });
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="bg-white p-8 rounded-2xl shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">
-          Meu Perfil
-        </h2>
-
-        <div className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Nome
-            </label>
-            <input
-              type="text"
-              placeholder="Seu nome"
-              className="w-full border rounded-md px-3 py-2 text-gray-700 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              readOnly
-            />
+    <div>
+      <header className='bg-(--color-primary) w-screen'>
+        <section className='mx-auto w-7/10 px-10 py-2 gap-10 flex justify-between'>
+          
+          <div className='flex  justify-center w-200 items-center gap-10'>
+          <img className="h-10"  src={logo} alt="Logo da security channels" />
+            <input type='search' className='h-10 w-100 bg-blue-100 px-5'placeholder='Busque novas empresas!'></input>
           </div>
+          <div className='flex  justify-around w-1/3 items-end'>
+            <div className='flex-col justify-items-center'>
+              <Bell  />
+              <p>Notificações</p>
+            </div>
+            <div className='flex-col justify-items-center'>
+              <RadioTower  />
+              <p>Channels</p>
+            </div>
+            <div className='flex-col justify-items-center'>
+              <Folder  />
+              <p>Contratos</p>
+            </div>
+            <div className='flex-col justify-items-center'>
+              <CircleUserRound  />
+              <p>Perfil</p>
+            </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              E-mail
-            </label>
-            <input
-              type="email"
-              placeholder="seu@email.com"
-              className="w-full border rounded-md px-3 py-2 text-gray-700 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              readOnly
-            />
           </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Serviço
-            </label>
-            <input
-              type="text"
-              placeholder="Tipo serviço"
-              className="w-full border rounded-md px-3 py-2 text-gray-700 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              readOnly
-            />
-          </div>
-
-          <div className="pt-4">
-            <button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-md transition">
-              Editar Perfil
-            </button>
-          </div>
-
-          <div className="text-center pt-2">
-            <button className="text-red-500 hover:underline text-sm">
-              Sair da conta
-            </button>
-          </div>
-        </div>
-      </div>
+        </section>
+      </header>
+      <main className='bg-gray-200 py-20'>
+        <Outlet />
+      </main>
     </div>
-  );
+  )
 }
