@@ -12,11 +12,9 @@ import About from '../pages/About/index';
 import Contact from '../pages/Contact/index';
 import DashboardLayout from '../pages/Enterprises/DashBoard';
 import Securitys from '../pages/Enterprises/Securitys';
-<<<<<<< HEAD
 import Resume from '../pages/Enterprises/Resume';
-=======
 import SearchCompany from '../pages/SearchCompany';
->>>>>>> test
+
 
 export default function main() {
   return (
