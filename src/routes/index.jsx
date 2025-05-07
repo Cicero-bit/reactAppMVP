@@ -15,7 +15,6 @@ import Securitys from '../pages/Enterprises/Securitys';
 import Resume from '../pages/Enterprises/Resume';
 import SearchCompany from '../pages/SearchCompany';
 
-
 export default function main() {
   return (
     <Routes>

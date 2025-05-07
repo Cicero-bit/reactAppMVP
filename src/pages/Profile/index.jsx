@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Outlet } from "react-router";
 import axios from '../../services/axios';
 import logo from "../../assets/securitychannel.svg"
-import profilePic from "../../assets/iconfallback.png"
+
 import { Bell, RadioTower, Folder, CircleUserRound } from 'lucide-react';
 
 export default function Profile() {
@@ -21,8 +21,8 @@ export default function Profile() {
     getProfile();
   });
   return (
-    <div className='w-full'>
-      <header className='bg-(--color-primary)'>
+    <div>
+      <header className='bg-(--color-primary) w-screen'>
         <section className='mx-auto w-7/10 px-10 py-2 gap-10 flex justify-between'>
           
           <div className='flex  justify-center w-200 items-center gap-10'>
