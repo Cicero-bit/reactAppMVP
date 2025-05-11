@@ -35,16 +35,10 @@ export default function Index() {
             </div>
             <div className="mt-8 flex flex-col md:flex-row gap-4 justify-center">
               <Link
-                to="/register"
+                to="/sobre"
                 className="px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg transition duration-300"
               >
-                Quero Trabalhar
-              </Link>
-              <Link
-                to="/empresas"
-                className="px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white font-semibold rounded-lg transition duration-300"
-              >
-                Contratar Seguranças
+                Conheça as Vantagens
               </Link>
             </div>
           </div>

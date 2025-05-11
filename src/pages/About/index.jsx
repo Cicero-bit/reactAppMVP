@@ -17,12 +17,13 @@ export default function About() {
               <p className="mb-4 text-gray-600">
                 Security Channel é focada em conectar profissionais de segurança
                 com empresas que precisam de serviços confiáveis em eventos e
-                festas. Usamos tecnologia para tornar o processo mais rápido e
-                eficaz.
+                festas de maneira simples. Usamos tecnologia para tornar o
+                processo mais rápido e eficaz.
               </p>
               <p className="text-gray-600">
                 Nosso objetivo é otimizar sua experiência com profissionais
-                verificados e confiáveis, entregando proteção com eficiência.
+                verificados e confiáveis, entregando proteção com eficiência e
+                organização.
               </p>
             </div>
 
@@ -34,13 +35,13 @@ export default function About() {
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 text-center gap-6">
             <div>
               <p className="text-3xl font-bold text-blue-800">24k+</p>
-              <p className="text-gray-600">Seguranças registrados</p>
+              <p className="text-gray-600">
+                Seguranças registrados e verificados
+              </p>
             </div>
             <div>
               <p className="text-3xl font-bold text-blue-800">80%</p>
-              <p className="text-gray-600">
-                Redução no tempo de contratação e organização
-              </p>
+              <p className="text-gray-600">Redução no tempo de contratação</p>
             </div>
             <div>
               <p className="text-3xl font-bold text-blue-800">10/10</p>

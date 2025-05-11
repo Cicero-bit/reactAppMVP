@@ -6,6 +6,7 @@ import axios from '../../services/axios';
 
 export default function Register() {
   const [name, setName] = useState('');
+  const [cpf, setCpf] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passowrdConfirm, setpassowrdConfirm] = useState('');
@@ -92,6 +93,22 @@ export default function Register() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Seu melhor email"
+            />
+          </div>
+          <div>
+            <label
+              className="block text-sm font-medium text-gray-700 mb-1"
+              htmlFor="email"
+            >
+              CPF
+            </label>
+            <input
+              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="text"
+              id="cpf"
+              value={cpf}
+              onChange={(e) => setCpf(e.target.value)}
+              placeholder="Seu CPF"
             />
           </div>
           <div>
