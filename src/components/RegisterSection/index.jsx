@@ -6,6 +6,7 @@ import axios from '../../services/axios';
 
 export default function Register() {
   const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
   const [cpf, setCpf] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,9 +16,13 @@ export default function Register() {
   async function handleSubmit(e) {
     e.preventDefault();
     let hasErr = false;
-    if (name.length < 6 || name.length >= 55) {
+    if (name.length < 3 || name.length >= 55) {
       hasErr = true;
-      toast.error('O seu nome deve conter entre 6 e 55 characteres');
+      toast.error('O seu nome deve conter entre 3 e 55 caracteres');
+    }
+    if (surname.length < 3 || surname.length >= 55) {
+      hasErr = true;
+      toast.error('O seu sobrenome deve conter entre 3 e 55 caracteres');
     }
     if (!isEmail(email)) {
       hasErr = true;
@@ -35,10 +40,13 @@ export default function Register() {
       try {
         await axios({
           method: 'post',
-          url: '/users',
+          url: 'users',
           data: {
             name,
+            surname,
             email,
+            role: 'security',
+            cpf_cnpj: cpf,
             password,
           },
         }).then((response) => {
@@ -46,10 +54,10 @@ export default function Register() {
           navigate('/login');
         });
       } catch (e) {
+        console.log(e);
         e.response.data.erros.map((err) => {
           toast.error(err);
         });
-        console.log(e.response.data.erros);
       }
     } else {
       return;
@@ -68,15 +76,31 @@ export default function Register() {
               className="block text-sm font-medium text-gray-700 mb-1"
               htmlFor="name"
             >
-              Nome Completo
+              Nome
             </label>
             <input
               className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
               type="text"
               value={name}
               id="name"
-              placeholder="Seu nome completo"
+              placeholder="Seu nome"
               onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div>
+            <label
+              className="block text-sm font-medium text-gray-700 mb-1"
+              htmlFor="surname"
+            >
+              Sobrenome
+            </label>
+            <input
+              className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="text"
+              value={surname}
+              id="surname"
+              placeholder="Seu sobrenome"
+              onChange={(e) => setSurname(e.target.value)}
             />
           </div>
           <div>
@@ -98,9 +122,9 @@ export default function Register() {
           <div>
             <label
               className="block text-sm font-medium text-gray-700 mb-1"
-              htmlFor="email"
+              htmlFor="cpf"
             >
-              CPF
+              CPF - {cpf}
             </label>
             <input
               className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
