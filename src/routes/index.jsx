@@ -29,10 +29,9 @@ export default function main() {
       <Route path="/sobre" element={<About />} />
       <Route path="/contato" element={<Contact />} />
       <Route element={<AuthRoute />}>
-        <Route path="profile" element={<Profile />} >
+        <Route path="profile" element={<Profile />}>
           <Route index element={<SearchCompany />} />
         </Route>
-
       </Route>
       <Route path="*" element={<Page404 />} />
     </Routes>
