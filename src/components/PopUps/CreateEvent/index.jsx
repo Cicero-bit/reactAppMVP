@@ -13,7 +13,7 @@ export default function CreateEvent({ closeFunc }) {
 
   return (
     <PopupBase onCLose={() => closeFunc()}>
-      <div className="relative bg-white rounded-xl p-6 w-full max-w-2xl shadow-lg">
+      <div className="relative bg-white rounded-xl p-6 max-w-2xl shadow-lg h-full w-full items-center">
         <button
           onClick={() => closeFunc()}
           className="absolute top-4 right-4 text-gray-500 hover:text-red-500 transition"
