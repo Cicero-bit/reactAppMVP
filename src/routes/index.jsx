@@ -13,7 +13,7 @@ import Contact from '../pages/Contact/index';
 import DashboardLayout from '../pages/Enterprises/DashBoard';
 import Securitys from '../pages/Enterprises/Securitys';
 import Resume from '../pages/Enterprises/Resume';
-import SearchCompany from '../pages/SearchCompany';
+import ProfileIndex from '../pages/SearchCompany';
 
 export default function main() {
   return (
@@ -30,7 +30,7 @@ export default function main() {
       <Route path="/contato" element={<Contact />} />
       <Route element={<AuthRoute />}>
         <Route path="profile" element={<Profile />}>
-          <Route index element={<SearchCompany />} />
+          <Route index element={<ProfileIndex />} />
         </Route>
       </Route>
       <Route path="*" element={<Page404 />} />

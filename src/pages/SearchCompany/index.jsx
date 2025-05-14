@@ -1,8 +1,9 @@
 import icon from '../../assets/iconfallback.png';
 
-export default function SearchCompany() {
+export default function ProfileIndex() {
   return (
     <main className=" max-w-7/10 mx-auto flex">
+      <article className="justify-self-center">helo</article>
       <aside className="justify-self-start bg-white rounded-lg">
         <div className="border-solid border-1 rounded-lg p-4 flex flex-col max-w-90 min-h-100">
           <div className="flex items-center gap-5">
@@ -19,7 +20,7 @@ export default function SearchCompany() {
           </div>
         </div>
       </aside>
-      <article className="justify-self-center">helo</article>
+
     </main>
   );
 }
