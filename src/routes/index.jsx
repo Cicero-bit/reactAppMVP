@@ -14,6 +14,9 @@ import DashboardLayout from '../pages/Enterprises/DashBoard';
 import Securitys from '../pages/Enterprises/Securitys';
 import Resume from '../pages/Enterprises/Resume';
 import SearchCompany from '../pages/SearchCompany';
+import Channels from '../pages/Enterprises/Channels';
+import Team from '../pages/Enterprises/Team';
+import Requests from '../pages/Enterprises/Requests';
 
 export default function main() {
   return (
@@ -22,6 +25,9 @@ export default function main() {
       <Route path="dashboard" element={<DashboardLayout />}>
         <Route path="" element={<Resume />} />
         <Route path="contatos" element={<Securitys />} />
+        <Route path="channels" element={<Channels />} />
+        <Route path="equipe" element={<Team />} />
+        <Route path="solicitacoes" element={<Requests />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
