@@ -13,14 +13,11 @@ import Contact from '../pages/Contact/index';
 import DashboardLayout from '../pages/Enterprises/DashBoard';
 import Securitys from '../pages/Enterprises/Securitys';
 import Resume from '../pages/Enterprises/Resume';
-<<<<<<< HEAD
 import ProfileIndex from '../pages/SearchCompany';
-=======
-import SearchCompany from '../pages/SearchCompany';
 import Channels from '../pages/Enterprises/Channels';
 import Team from '../pages/Enterprises/Team';
 import Requests from '../pages/Enterprises/Requests';
->>>>>>> ef8b36b5559bf51271b77f7fc0a06969cd37ab35
+
 
 export default function main() {
   return (
