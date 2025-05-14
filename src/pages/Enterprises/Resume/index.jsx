@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import locale from '@fullcalendar/core/locales/pt-br';
-import { Link } from 'react-router';
+import PopupCreateEvent from '../../../components/PopUps/CreateEvent';
+import Logger from '../../../components/Logger';
 
 export default function Resume() {
+  const [eventPopUpVisibility, setEventPopupVisibility] = useState(false);
   function datehandler(args) {
     console.log(args);
   }
@@ -24,35 +26,31 @@ export default function Resume() {
         </div>
       </div>
       <div className="col-span-1 flex flex-col gap-6">
-        <div className="bg-white shadow-md rounded-lg p-4 h-1/2 overflow-y-auto">
-          <h2 className="text-lg font-semibold mb-2">Log de Atividades</h2>
-          <ul className="text-sm text-gray-600 space-y-2">
-            <li>Rogerin aceitou trabalhar no evento "nome do evento"</li>
-            <li>Rogerin te enviou uma mensagem</li>
-            <li>O evento skibidi ainda não tem seguranças!</li>
-            <li>Sistema patecio!</li>
-            <li>O evento skibidi foi adicionado com sucesso!</li>
-          </ul>
-        </div>
-
+        <Logger />
         <div className="bg-white shadow-md rounded-lg p-4 h-1/2">
           <h2 className="text-lg font-semibold mb-2">Atalhos Rápidos</h2>
-          <div className="grid grid-cols-2 gap-3">
-            <Link className="text-center bg-blue-600 text-white py-2 px-3 rounded hover:bg-blue-700 text-sm">
+          <div className="grid grid-cols-1 gap-3">
+            <button
+              onClick={() => setEventPopupVisibility(!eventPopUpVisibility)}
+              className="text-center bg-blue-600 text-white py-2 px-3 rounded hover:bg-blue-700 text-sm"
+            >
               Novo Evento
-            </Link>
-            <Link className="text-center bg-blue-600 text-white py-2 px-3 rounded hover:bg-blue-700 text-sm">
-              Adicionar Seguranças
-            </Link>
-            <Link className="text-center bg-blue-600 text-white py-2 px-3 rounded hover:bg-blue-700 text-sm">
+            </button>
+            <button className="text-center bg-blue-600 text-white py-2 px-3 rounded hover:bg-blue-700 text-sm">
               Iniciar Conversa
-            </Link>
-            <Link className="text-center bg-blue-600 text-white py-2 px-3 rounded hover:bg-blue-700 text-sm">
+            </button>
+            <button className="text-center bg-blue-600 text-white py-2 px-3 rounded hover:bg-blue-700 text-sm">
               Gerir Evento
-            </Link>
+            </button>
           </div>
         </div>
       </div>
+
+      {eventPopUpVisibility && (
+        <PopupCreateEvent
+          closeFunc={() => setEventPopupVisibility(!eventPopUpVisibility)}
+        />
+      )}
 
       <div className="col-span-1 lg:col-span-2 bg-white rounded-lg shadow-md p-4">
         <FullCalendar
@@ -62,8 +60,8 @@ export default function Resume() {
           locale={locale}
           headerToolbar={headerOptions}
           events={[
-            { title: 'suruba', date: '2025-05-10' },
-            { title: 'organização da suruba', date: '2025-05-09' },
+            { title: 'Skibidi', date: '2025-05-10' },
+            { title: 'organização da skibidi', date: '2025-05-09' },
           ]}
         />
       </div>
