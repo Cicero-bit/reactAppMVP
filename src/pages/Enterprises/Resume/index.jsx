@@ -19,13 +19,15 @@ export default function Resume() {
   };
 
   return (
-    <div className="p-6 grid grid-cols-1 lg:grid-cols-3 gap-6 h-full relative z-100">
-
+    <div className="p-6 grid grid-cols-2 lg:grid-cols-3 gap-6 h-full relative z-100">
       <div className="col-span-1 flex flex-col gap-6">
         <Logger />
         <div className="bg-white shadow-md rounded-lg p-4 h-1/2">
           <h2 className="text-lg font-semibold mb-2">Atalhos Rápidos</h2>
-          <div className="grid grid-cols-1 gap-3">
+          <div className="grid grid-cols-2 gap-3">
+            <button className="text-center bg-blue-600 text-white py-2 px-3 rounded hover:bg-blue-700 text-sm">
+              Gerir Eventos
+            </button>
             <button
               onClick={() => setEventPopupVisibility(!eventPopUpVisibility)}
               className="text-center bg-blue-600 text-white py-2 px-3 rounded hover:bg-blue-700 text-sm"
@@ -36,7 +38,7 @@ export default function Resume() {
               Iniciar Conversa
             </button>
             <button className="text-center bg-blue-600 text-white py-2 px-3 rounded hover:bg-blue-700 text-sm">
-              Gerir Evento
+              Meus Times
             </button>
           </div>
         </div>

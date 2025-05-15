@@ -9,15 +9,8 @@ import {
   Users,
   Settings,
   Moon,
-  LogOut,
 } from 'lucide-react';
-import {
-  Link,
-  Outlet,
-  useLocation,
-  useMatch,
-  useResolvedPath,
-} from 'react-router';
+import { Link, Outlet, useMatch, useResolvedPath } from 'react-router';
 import logo from '../../../assets/securitychannel.svg';
 
 export default function DashboardLayout() {
@@ -106,17 +99,13 @@ export default function DashboardLayout() {
                 <div className="flex justify-between items-center w-full">
                   <div>
                     {' '}
-                    <p className="text-sm font-medium">Cicero</p>
+                    <p className="text-sm font-bold">Cicero</p>
                     <p className="text-xs text-gray-500">Adiministrador</p>
                   </div>
                   <Moon className="w-5 h-5 mr-1" />
                 </div>
               )}
             </div>
-            <button className="flex items-center space-x-2 mt-4 text-red-500">
-              <LogOut className="w-4 h-4" />
-              {sidebarOpen && <span>Sair</span>}
-            </button>
           </div>
         </div>
       </aside>

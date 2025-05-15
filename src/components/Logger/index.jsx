@@ -9,12 +9,13 @@ import {
 
 export default function Logger() {
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 h-1/2 overflow-y-auto border border-gray-200">
+    <div className="bg-white shadow-sm rounded-lg p-6 h-1/2">
       <h2 className="text-lg font-semibold mb-4 text-gray-800">
         Log de Atividades
       </h2>
 
-      <ul className="space-y-3">
+      {/* Grupo que faz scroll */}
+      <ul className="space-y-3 overflow-y-auto max-h-80 pr-2">
         <li className="flex items-center gap-3 p-3 border border-gray-200 rounded-md shadow-sm">
           <UserCheck className="text-green-500 w-5 h-5" />
           <span className="text-sm text-gray-700">
@@ -55,6 +56,7 @@ export default function Logger() {
           </span>
           <span className="ml-auto text-xs text-gray-400">há 3 hrs</span>
         </li>
+
         <li className="flex items-center gap-3 p-3 border border-gray-200 rounded-md shadow-sm">
           <CheckCircle className="text-green-500 w-5 h-5" />
           <span className="text-sm text-gray-700">
