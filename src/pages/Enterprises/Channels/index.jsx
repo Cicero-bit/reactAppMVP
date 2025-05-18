@@ -10,7 +10,7 @@ import {
 
 export default function Channels() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-6 h-full">
+    <div className="grid grid-cols-1 md:grid-cols-6 h-full p-6">
       <aside className="col-span-1 bg-white border-r p-4 space-y-4 shadow-sm rounded-l-2xl">
         <h2 className="text-lg font-semibold mb-2">Canais</h2>
         <nav className="flex flex-col space-y-3">

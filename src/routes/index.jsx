@@ -17,7 +17,7 @@ import ProfileIndex from '../pages/SearchCompany';
 import Channels from '../pages/Enterprises/Channels';
 import Team from '../pages/Enterprises/Team';
 import Requests from '../pages/Enterprises/Requests';
-
+import Configuracoes from '../pages/Enterprises/configuracoes';
 
 export default function main() {
   return (
@@ -29,6 +29,7 @@ export default function main() {
         <Route path="channels" element={<Channels />} />
         <Route path="equipe" element={<Team />} />
         <Route path="solicitacoes" element={<Requests />} />
+        <Route path="configuracoes" element={<Configuracoes />} />
       </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
