@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { Settings, Bell, Shield, Building2 } from 'lucide-react';
 import EnterpriseConfig from './enterprise_info';
 
+const Status = false;
+
 const menuItems = [
   {
     id: 'enterprise',
-    label: 'Informações Empresarial',
+    label: 'Informações Empresariais',
     icon: <Building2 size={20} />,
-    content: <EnterpriseConfig />,
+    content: <EnterpriseConfig ativo={Status}/>,
   },
-  { id: 'preferences', label: 'Preferencias', icon: <Settings size={20} /> },
+  { id: 'preferences', label: 'Preferências', icon: <Settings size={20} /> },
   { id: 'notifications', label: 'Notificações', icon: <Bell size={20} /> },
   { id: 'privacy', label: 'Privacidade', icon: <Shield size={20} /> },
 ];

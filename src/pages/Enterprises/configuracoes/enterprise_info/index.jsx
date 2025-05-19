@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export default function EnterpriseInfo() {
+export default function EnterpriseInfo({ativo}) {
+
+  const [status, setStatus] = useState(ativo)
+
+  console.log(ativo)
+
   return (
     <section>
       <form className="space-y-4">
@@ -55,14 +60,21 @@ export default function EnterpriseInfo() {
         <div>
           <label
             htmlFor="banner"
-            className="block text-sm font-medium text-gray-700"
+            className="text-sm font-medium text-gray-700 flex gap-5"
           >
-            Status da conta
+            Status da conta:
+          <div className={`${status? 'bg-green-500':  'bg-red-500' } w-30 text-center text-black rounded-lg`}>
+            {status? 'Ativo' : "Não ativo"}</div>
           </label>
-          <div className="bg-red-500">Não ativa</div>
+
+          
         </div>
 
-        <div className="text-end">
+        <div className={` ${status? 'text-end' : 'flex justify-between'}`}>
+          {status? '': 
+            <div>
+              
+            </div>}
           <button
             type="submit"
             className="bg-black text-white px-4 py-2 rounded-lg shadow hover:bg-gray-900 transition"

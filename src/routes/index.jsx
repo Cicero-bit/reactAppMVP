@@ -5,7 +5,7 @@ import AuthRoute from './util/AuthRequired';
 import Login from '../pages/Login';
 import Page404 from '../pages/Page404';
 import Register from '../pages/Register';
-import Profile from '../pages/Profile';
+import Painel from '../pages/Profile';
 import Index from '../pages/Index';
 import EnterpriseRegister from '../pages/Enterprises/Register';
 import About from '../pages/About/index';
@@ -37,7 +37,7 @@ export default function main() {
       <Route path="/sobre" element={<About />} />
       <Route path="/contato" element={<Contact />} />
       <Route element={<AuthRoute />}>
-        <Route path="profile" element={<Profile />}>
+        <Route path="Painel" element={<Painel />}>
           <Route index element={<ProfileIndex />} />
         </Route>
       </Route>

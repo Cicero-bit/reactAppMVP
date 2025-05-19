@@ -5,7 +5,7 @@ import logo from "../../assets/securitychannel.svg"
 
 import { Bell, RadioTower, Folder, CircleUserRound } from 'lucide-react';
 
-export default function Profile() {
+export default function Painel() {
   const [security, setSecurity] = useState(0);
 
   useEffect(() => {
