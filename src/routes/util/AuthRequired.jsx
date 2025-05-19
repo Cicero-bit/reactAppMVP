@@ -5,9 +5,12 @@ import { useSelector } from 'react-redux';
 // useSelector((state) => state.auth.isLoggedIn)
 
 export default function AuthRoute() {
-  const IsLoggedIn = true;
+  const logged = useSelector((state) => {
+    return state.auth.isLoggedIn;
+  });
+  const isLoggedIn = logged;
 
-  if (!IsLoggedIn) {
+  if (!isLoggedIn) {
     return <Navigate to="/" />;
   }
   return <Outlet />;

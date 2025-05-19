@@ -37,7 +37,7 @@ export default function main() {
       <Route path="/sobre" element={<About />} />
       <Route path="/contato" element={<Contact />} />
       <Route element={<AuthRoute />}>
-        <Route path="profile" element={<Profile />}>
+        <Route path="/painel" element={<Profile />}>
           <Route index element={<ProfileIndex />} />
         </Route>
       </Route>

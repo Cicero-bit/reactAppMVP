@@ -16,7 +16,12 @@ function* loginRequest({ payload }) {
 
     axios.defaults.headers.Authorization = `Bearer ${response.data.token}`;
 
-    payload.navigate(-1);
+    if (response.data.user.role === 'security') {
+      payload.navigate('/painel');
+    }
+    if (response.data.user.role === 'enterprise') {
+      payload.navigate('/dashboard');
+    }
   } catch (err) {
     toast.error('Usuário ou senha inválidos');
     yield put(actions.LOGIN_FAILURE());
@@ -24,6 +29,7 @@ function* loginRequest({ payload }) {
 }
 
 function persistRehydrate({ payload }) {
+  console.log('reidratando o app com user');
   const token = payload.auth.TokenJWT;
   if (!token) return;
   axios.defaults.headers.Authorization = `Bearer ${token}`;

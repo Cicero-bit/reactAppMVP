@@ -11,7 +11,7 @@ export default function PopupBase({ children, onCLose }) {
         className="bg-black/50 bg-opacity-10 fixed inset-0 flex items-center justify-center z-50"
         onClick={handleSectionClick}
       >
-        <div className="bg-white rounded shadow-xl">{children}</div>
+        <div className="bg-white rounded shadow-xl w-4/11">{children}</div>
       </section>
     </>
   );
