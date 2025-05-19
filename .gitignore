@@ -13,7 +13,7 @@ dist
 dist-ssr
 *.local
 .env
-anatoções.txt
+anotoções.txt
 lixo.json
 
 # Editor directories and files

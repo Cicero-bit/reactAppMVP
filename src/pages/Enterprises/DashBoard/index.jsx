@@ -83,17 +83,20 @@ export default function DashboardLayout() {
         </div>
 
         {/* Menu inferior */}
-        <div className="px-4 py-8 space-y-6">
-          <MenuItem
-            icon={<Settings />}
-            label="Configurações"
-            sidebarOpen={sidebarOpen}
-            to={'configuracoes'}
-          />
+
+        <div className="px-4 py-8 space-y-4">
+          <Section title="Sistema" open={sidebarOpen}>
+            <MenuItem
+              icon={<Settings />}
+              label="Configurações"
+              sidebarOpen={sidebarOpen}
+              to={'configuracoes'}
+            />
+          </Section>
 
           {/* Perfil e logout */}
           <div>
-            <div className="flex space-x-3">
+            <div className="flex space-x-3 mt-4">
               <img src="" alt="User" className="w-8 h-8 rounded-full" />
               {sidebarOpen && (
                 <div className="flex justify-between items-center w-full">

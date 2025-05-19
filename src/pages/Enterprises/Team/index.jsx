@@ -1,26 +1,28 @@
+import TeamCard from '../../../components/TeamCard/index.jsx';
 import React from 'react';
 import { User, Pencil } from 'lucide-react';
-import TeamCard from '../../../components/TeamCard/index.jsx';
 
 export default function Team() {
-
-  const teams = [
+  const times = [
     {
-      nome: "Sorrizo Ronaldo",
-      status: true
+      nome: 'helo',
+      ativo: true,
     },
     {
-      nome: "300 fotos",
-      status: false
+      nome: 'amendoim',
+      ativo: false,
     },
     {
-      nome: "Skibidi digger",
-      status: true
-    }
-  ]
-  
+      nome: 'Salmonela',
+      ativo: false,
+    },
+    {
+      nome: 'Tropa de Elite',
+      ativo: true,
+    },
+  ];
   return (
-    <section className="flex flex-col gap-10">
+    <section className="flex flex-col gap-10 px-5">
       <div className="flex place-content-between py-3 h-20">
         <h1 className="text-[40px] font-semibold">Times</h1>
         <div className="flex gap-4  px-10 ">
@@ -51,12 +53,12 @@ export default function Team() {
         </div>
       </div>
 
-      <div className="grid  grid-cols-4 gap-100">
-
-        {teams.map((team) => {
-          return <TeamCard nome={team.nome} status={team.status}></TeamCard>
-        })}
-
+      <div className="grid gap-10 w-full ">
+        <div className="grid grid-cols-4 gap-10">
+          {times.map((time) => {
+            return <TeamCard nome={time.nome} ativo={time.ativo}></TeamCard>;
+          })}
+        </div>
       </div>
     </section>
   );
