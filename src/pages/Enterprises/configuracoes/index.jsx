@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Settings, Bell, Shield, Building2 } from 'lucide-react';
 import EnterpriseConfig from './enterprise_info';
 
-const Status = false;
+const Status = true;
 
 const menuItems = [
   {

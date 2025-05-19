@@ -4,8 +4,6 @@ export default function EnterpriseInfo({ativo}) {
 
   const [status, setStatus] = useState(ativo)
 
-  console.log(ativo)
-
   return (
     <section>
       <form className="space-y-4">
@@ -72,8 +70,9 @@ export default function EnterpriseInfo({ativo}) {
 
         <div className={` ${status? 'text-end' : 'flex justify-between'}`}>
           {status? '': 
-            <div>
-              
+            <div className='flex gap-2'>
+                <p>Motivo:</p>
+                <p>vc é feio</p>
             </div>}
           <button
             type="submit"

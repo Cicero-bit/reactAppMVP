@@ -15,7 +15,7 @@ export default function Logger() {
       </h2>
 
       {/* Grupo que faz scroll */}
-      <ul className="space-y-3 overflow-y-auto max-h-80 pr-2">
+      <ul className="space-y-3 overflow-y-auto 2xl:max-h-80 max-h-70 pr-2">
         <li className="flex items-center gap-3 p-3 border border-gray-200 rounded-md shadow-sm">
           <UserCheck className="text-green-500 w-5 h-5" />
           <span className="text-sm text-gray-700">

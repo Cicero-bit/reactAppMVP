@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import logo from '../../assets/securitychannel.svg';
 
 export default function Footer() {
-  const date = Date.now();
+  const date = new Date()
   console.log(date);
   return (
     <footer className="bg-white dark:bg-gray-900">
@@ -30,7 +30,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link to="/register" className="hover:underline">
-                    Individuos
+                    Profissionais
                   </Link>
                 </li>
               </ul>
@@ -82,7 +82,7 @@ export default function Footer() {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            © 2025{' '}
+            © {`${date.getFullYear()} `} 
             <Link to="/" className="hover:underline">
               SecurityChannel™
             </Link>

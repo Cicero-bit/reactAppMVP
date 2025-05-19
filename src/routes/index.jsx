@@ -5,7 +5,7 @@ import AuthRoute from './util/AuthRequired';
 import Login from '../pages/Login';
 import Page404 from '../pages/Page404';
 import Register from '../pages/Register';
-import Painel from '../pages/Profile';
+import Painel from '../pages/Painel';
 import Index from '../pages/Index';
 import EnterpriseRegister from '../pages/Enterprises/Register';
 import About from '../pages/About/index';
@@ -13,7 +13,7 @@ import Contact from '../pages/Contact/index';
 import DashboardLayout from '../pages/Enterprises/DashBoard';
 import Securitys from '../pages/Enterprises/Securitys';
 import Resume from '../pages/Enterprises/Resume';
-import ProfileIndex from '../pages/SearchCompany';
+import searchCompany from '../pages/Painel/SearchCompany';
 import Channels from '../pages/Enterprises/Channels';
 import Team from '../pages/Enterprises/Team';
 import Requests from '../pages/Enterprises/Requests';
@@ -37,9 +37,7 @@ export default function main() {
       <Route path="/sobre" element={<About />} />
       <Route path="/contato" element={<Contact />} />
       <Route element={<AuthRoute />}>
-        <Route path="Painel" element={<Painel />}>
-          <Route index element={<ProfileIndex />} />
-        </Route>
+        <Route path="/Painel" element={<Painel />} />
       </Route>
       <Route path="*" element={<Page404 />} />
     </Routes>
