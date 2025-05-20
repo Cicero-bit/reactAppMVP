@@ -10,7 +10,7 @@ export default function CreateEvent({ closeFunc }) {
   const [endDate, setEndDate] = useState(Date.now());
   const [description, setDescription] = useState('');
   const [cep, setCep] = useState('');
-  const [area, setArea] = useState(['']);
+  const [area, setArea] = useState([]);
   const [city, setCity] = useState('');
   const [street, setStreet] = useState('');
   const [number, setNumber] = useState();
@@ -117,7 +117,11 @@ export default function CreateEvent({ closeFunc }) {
             <label htmlFor="area" className="label block text-sm mb-2">
               Área
             </label>
-            <DropDown onSelect={(item) => setArea([...area, item])}></DropDown>
+            <DropDown
+              lista={area}
+              onSelect={(item) => setArea([...area, item])}
+              onRemove={(item) => setArea(area.filter((i) => i !== item))}
+            ></DropDown>
             <div>{area}</div>
           </div>
 

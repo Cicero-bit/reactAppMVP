@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export default function DropDown({ onSelect }) {
+export default function DropDown({ lista, onSelect, onRemove }) {
   const [visibility, setVisibility] = useState(false);
   const dropdownRef = useRef();
+  console.log(lista);
   const areas = [
     'Moto Segurança',
     'Formatura',
@@ -10,6 +11,12 @@ export default function DropDown({ onSelect }) {
     'Corporativo',
     'Guarda Costas',
   ];
+
+  function beforeSet(item) {
+    if (lista.includes(item)) {
+      onRemove(item);
+    } else onSelect(item);
+  }
 
   //fica ouvindo clicks na pagina, caso o elemento não estiver dentro da div ref, fecha a div do dropdown
   useEffect(() => {
@@ -70,13 +77,14 @@ export default function DropDown({ onSelect }) {
           >
             {areas.map((item) => (
               <li key={item}>
-                <div className="flex p-2 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-600">
+                <div className="z-10 flex p-2 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-600">
                   <div className="flex items-center h-5">
                     <input
                       id={`${item}`}
+                      checked={lista.includes(item) ? true : false}
                       aria-describedby="helper-checkbox-text-1"
                       type="checkbox"
-                      onClick={() => onSelect(item)}
+                      onChange={() => beforeSet(item)}
                       value=""
                       className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                     />
