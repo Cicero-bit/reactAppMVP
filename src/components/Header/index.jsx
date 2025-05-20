@@ -65,7 +65,13 @@ export default function Menu() {
             Contato
           </Link>
           <Link
-            to={isLoggedIn ? '/painel' : '/login'}
+            to={
+              isLoggedIn
+                ? currentUser.role === 'security'
+                  ? '/painel'
+                  : '/dashboard'
+                : '/login'
+            }
             className="text-gray-600 hover:text-blue-600 transition font-bold flex items-center gap-1"
           >
             {isLoggedIn ? (
